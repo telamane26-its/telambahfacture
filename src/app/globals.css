@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #F8F9FC;
+    --foreground: #101828;
+    --card: #FFFFFF;
+    --card-foreground: #101828;
+    --border: #EAECF0;
+    --input: #D0D5DD;
+    --ring: #0F172A;
+    --muted: #667085;
+    --muted-foreground: #475467;
+  }
+
+  .dark {
+    --background: #0F1117;
+    --foreground: #F8F9FA;
+    --card: #161922;
+    --card-foreground: #F8F9FA;
+    --border: #232734;
+    --input: #2D3345;
+    --ring: #E2E8F0;
+    --muted: #94A3B8;
+    --muted-foreground: #CBD5E1;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-feature-settings: "rlig" 1, "calt" 1, "cv11" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  /* Micro-animations universelles pour tous les éléments cliquables */
+  button,
+  a,
+  [role="button"],
+  input[type="submit"],
+  input[type="button"],
+  input[type="checkbox"],
+  .clickable {
+    cursor: pointer;
+    transition-property: transform, box-shadow, background-color, border-color, color, opacity;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  /* Effet de pression tactile au clic sur les boutons et liens */
+  button:active,
+  a:active,
+  [role="button"]:active {
+    transform: scale(0.96) !important;
+  }
+}
+
+/* Tabular numbers for clean financial alignment */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Custom subtle scrollbars — light mode */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #E2E8F0;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #CBD5E1;
+}
+
+/* Dark mode scrollbars */
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Animations & Micro-interactions haute précision */
+@layer utilities {
+  /* Micro-élévation au survol */
+  .hover-lift {
+    transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 220ms ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Léger zoom élastique au survol */
+  .hover-pop {
+    transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .hover-pop:hover {
+    transform: scale(1.05);
+  }
+
+  /* Lueur subtile moderne */
+  .hover-glow {
+    transition: box-shadow 220ms ease, transform 200ms ease;
+  }
+  .hover-glow:hover {
+    box-shadow: 0 6px 16px -2px rgba(15, 23, 42, 0.12);
+    transform: translateY(-1.5px);
+  }
+
+  /* Lignes de tableau interactives */
+  .row-interactive {
+    transition: background-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+  }
+  .row-interactive:hover {
+    background-color: rgba(241, 245, 249, 0.7);
+  }
+  .dark .row-interactive:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+}
