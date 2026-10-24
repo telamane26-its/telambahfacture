@@ -17,35 +17,35 @@ export function HeroSection() {
   return (
     <section className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-16 sm:pb-24 flex flex-col items-center text-center">
       {/* Top Pill Badge */}
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-50 dark:bg-slate-800/90 border border-slate-200/90 dark:border-slate-700 shadow-2xs mb-6 hover:scale-105 transition-transform duration-200 cursor-default">
-        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-        <span className="text-xs font-semibold tracking-wider uppercase text-slate-700 dark:text-slate-200">
-          ✦ La facturation nouvelle génération pour l&apos;Afrique
+      <div className="inline-flex items-center justify-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-slate-50 dark:bg-slate-800/90 border border-slate-200/90 dark:border-slate-700 shadow-2xs mb-6 hover:scale-105 transition-transform duration-200 cursor-default max-w-full">
+        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+        <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-slate-700 dark:text-slate-200 text-center">
+          ✦ Facturation nouvelle génération · Afrique
         </span>
-        <span className="text-[11px] px-2 py-0.5 rounded-full bg-emerald-100/70 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 font-bold border border-emerald-200/80 dark:border-emerald-800/60">
+        <span className="text-[10px] sm:text-[11px] px-2 py-0.5 rounded-full bg-emerald-100/70 dark:bg-emerald-950/70 text-emerald-800 dark:text-emerald-300 font-bold border border-emerald-200/80 dark:border-emerald-800/60 shrink-0">
           OHADA
         </span>
       </div>
 
       {/* Hero Typography */}
-      <div className="relative max-w-4xl mx-auto flex flex-col items-center">
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.12]">
+      <div className="relative w-full max-w-4xl mx-auto flex flex-col items-center text-center">
+        <h1 className="w-full text-center text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.16] sm:leading-[1.12]">
           Fini les factures Excel.
         </h1>
 
         {/* Highlight Centerpiece Badge */}
-        <div className="relative my-3 z-10 px-5 sm:px-8 py-2 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200/80 dark:border-emerald-800/60 shadow-xs hover:scale-[1.02] transition-transform duration-300">
-          <span className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-emerald-700 dark:text-emerald-400 tracking-tight">
+        <div className="relative my-2 sm:my-3 z-10 max-w-full px-4 sm:px-8 py-1.5 sm:py-2 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200/80 dark:border-emerald-800/60 shadow-xs hover:scale-[1.02] transition-transform duration-300 mx-auto text-center">
+          <span className="block text-center text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-extrabold text-emerald-700 dark:text-emerald-400 tracking-tight">
             Facturez avec sérénité
           </span>
         </div>
 
-        <p className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.12]">
+        <p className="w-full text-center text-2xl xs:text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.16] sm:leading-[1.12]">
           et développez votre entreprise.
         </p>
 
         {/* Subtitle */}
-        <p className="text-sm sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mt-6 leading-relaxed">
+        <p className="w-full text-center text-sm sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mt-5 sm:mt-6 leading-relaxed px-2">
           Créez des factures professionnelles en 2 clics conformes aux normes{" "}
           <strong className="text-slate-900 dark:text-white font-semibold">OHADA</strong>, calculez la{" "}
           <strong className="text-slate-900 dark:text-white font-semibold">TVA 18%</strong> en temps réel et encaissez
@@ -55,10 +55,10 @@ export function HeroSection() {
         </p>
 
         {/* Action Buttons with Advanced Hover & Click Animations */}
-        <div className="flex flex-wrap items-center justify-center gap-3.5 mt-8">
+        <div className="w-full flex flex-wrap items-center justify-center gap-3.5 mt-8">
           <Link
             href="/register"
-            className="hero-cta-btn inline-flex items-center gap-3 pl-7 pr-2.5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all duration-200 group"
+            className="hero-cta-btn inline-flex items-center justify-center gap-3 pl-7 pr-2.5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md transition-all duration-200 group"
           >
             <span>Commencer gratuitement</span>
             <span className="w-9 h-9 rounded-full bg-white/20 flex items-center justify-center transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
@@ -68,7 +68,7 @@ export function HeroSection() {
 
           <a
             href="#fonctionnalites"
-            className="secondary-cta-btn inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-700 font-semibold text-sm shadow-2xs"
+            className="secondary-cta-btn inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-700 font-semibold text-sm shadow-2xs"
           >
             <PlayCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
             <span>Voir la démonstration</span>
@@ -76,17 +76,17 @@ export function HeroSection() {
         </div>
 
         {/* Trust Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 mt-8 text-slate-500 dark:text-slate-400 text-xs font-semibold">
+        <div className="w-full flex flex-wrap items-center justify-center text-center gap-y-2 gap-x-4 sm:gap-x-6 mt-8 text-slate-500 dark:text-slate-400 text-xs font-semibold">
           <div className="flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+            <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
             <span>Sans carte bancaire</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+            <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
             <span>Conforme UEMOA & CEMAC</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+            <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
             <span>Paiements TMoney, Flooz & Wave</span>
           </div>
         </div>
