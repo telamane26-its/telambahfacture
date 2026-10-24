@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Gift, Copy, Check, MessageSquare, Users, Sparkles, Award, ArrowUpRight, X, ExternalLink } from "lucide-react";
+import { Gift, Copy, Check, MessageSquare, Users, Sparkles, Award, X } from "lucide-react";
 import { useData } from "@/lib/data-context";
 import { formatFCFA } from "@/lib/utils";
 

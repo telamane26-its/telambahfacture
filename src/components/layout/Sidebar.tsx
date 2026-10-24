@@ -14,7 +14,6 @@ import {
   Moon,
   Sun,
   Search,
-  ChevronDown,
   PlusCircle,
   ArrowUpRight,
   Bell,
@@ -33,7 +32,6 @@ interface SidebarProps {
 export function Sidebar({ currentPath = "/dashboard" }: SidebarProps) {
   const { isDark, toggleTheme } = useTheme();
   const { invoices, clients, unreadNotificationsCount, isCloudSynced } = useData();
-  const [searchQuery, setSearchQuery] = useState("");
   const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
   const [isReferralOpen, setIsReferralOpen] = useState(false);
 

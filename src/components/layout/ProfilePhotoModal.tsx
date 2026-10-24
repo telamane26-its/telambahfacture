@@ -2,7 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 import React, { useState, useRef } from "react";
-import { Camera, Upload, Trash2, Check, X, RotateCcw, AlertCircle } from "lucide-react";
+import { Camera, Upload, Check, X, RotateCcw, AlertCircle } from "lucide-react";
 import { useData } from "@/lib/data-context";
 
 interface ProfilePhotoModalProps {

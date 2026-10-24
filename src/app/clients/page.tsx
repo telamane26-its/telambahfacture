@@ -14,12 +14,7 @@ import {
   Trash2,
   FileText,
   FilePlus,
-  ArrowUpRight,
   X,
-  Check,
-  AlertTriangle,
-  Smartphone,
-  ShieldCheck,
   Briefcase,
   MoreVertical,
 } from "lucide-react";

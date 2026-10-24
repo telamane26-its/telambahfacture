@@ -3,22 +3,16 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import {
-  HelpCircle,
   MessageSquare,
   Mail,
   Phone,
-  FileQuestion,
   ChevronDown,
   Search,
   ExternalLink,
   Send,
-  CheckCircle2,
   BookOpen,
   Sparkles,
-  ShieldCheck,
   Zap,
-  ArrowRight,
-  Clock,
   Check,
 } from "lucide-react";
 import { Sidebar } from "@/components/layout/Sidebar";

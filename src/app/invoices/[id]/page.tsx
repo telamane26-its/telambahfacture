@@ -13,17 +13,7 @@ import {
   CheckCircle2,
   Clock,
   AlertTriangle,
-  Send,
-  Building2,
-  User,
-  Phone,
-  Mail,
-  MapPin,
-  Calendar,
-  CreditCard,
-  Printer,
   ChevronDown,
-  AlertCircle,
   Loader2,
 } from "lucide-react";
 import { Sidebar } from "@/components/layout/Sidebar";

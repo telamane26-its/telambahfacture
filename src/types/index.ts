@@ -96,7 +96,7 @@ export interface UserProfile {
     wave?: { phone?: string; enabled?: boolean };
     orangeMoney?: { phone?: string; enabled?: boolean };
     bankTransfer?: { iban?: string; bankName?: string; swift?: string; enabled?: boolean };
-    [key: string]: any;
+    [key: string]: unknown;
   };
   defaultTaxRate?: number;
   paymentTermDays?: number;

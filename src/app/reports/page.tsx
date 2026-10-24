@@ -1,22 +1,13 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useMemo } from "react";
 import Link from "next/link";
 import {
-  BarChart3,
   TrendingUp,
-  Download,
-  Calendar,
   DollarSign,
-  PieChart,
   CheckCircle2,
   Clock,
   AlertTriangle,
-  ArrowUpRight,
-  ShieldAlert,
-  Smartphone,
-  CreditCard,
-  Building2,
   FileSpreadsheet,
 } from "lucide-react";
 import { Sidebar } from "@/components/layout/Sidebar";
@@ -29,7 +20,6 @@ import { ReportsSkeleton } from "@/components/reports/ReportsSkeleton";
 
 export default function ReportsPage() {
   const { invoices, isLoading } = useData();
-  const [selectedPeriod, setSelectedPeriod] = useState<string>("2026");
 
   // Calculations
   const metrics = useMemo(() => {

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   Bell,
@@ -15,7 +14,6 @@ import {
   Gift,
   Info,
   ArrowUpRight,
-  Filter,
 } from "lucide-react";
 import { useData } from "@/lib/data-context";
 import { NotificationItem, NotificationType } from "@/types";

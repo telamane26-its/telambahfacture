@@ -6,18 +6,10 @@ import {
   Package,
   Plus,
   Search,
-  Tag,
-  Folder,
   Edit2,
   Trash2,
   FilePlus,
-  Coins,
-  CheckCircle2,
   X,
-  Sparkles,
-  Layers,
-  ArrowUpRight,
-  Loader2,
 } from "lucide-react";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { MobileHeader } from "@/components/layout/MobileHeader";

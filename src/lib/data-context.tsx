@@ -91,7 +91,7 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
   const [clients, setClients] = useState<Record<string, Client>>({});
   const [currentUser, setCurrentUser] = useState<UserProfile>(() => createFallbackProfile(user));
   const [notifications, setNotifications] = useState<NotificationItem[]>([]);
-  const [referrals, setReferrals] = useState<ReferralItem[]>([]);
+  const [referrals] = useState<ReferralItem[]>([]);
   const [isCloudSynced, setIsCloudSynced] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 

@@ -12,11 +12,10 @@ import {
   EyeOff,
   AlertCircle,
   Loader2,
-  CheckCircle2,
   ShieldCheck,
 } from "lucide-react";
 
-export default function LoginPage() {
+function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const redirectPath = searchParams.get("redirect") || "/dashboard";
@@ -197,5 +196,19 @@ export default function LoginPage() {
         Telambah Facture © 2026 · Conçu au Togo 🇹🇬 pour l&apos;Afrique de l&apos;Ouest & Centrale
       </footer>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <React.Suspense
+      fallback={
+        <div className="min-h-screen bg-[#F8F9FC] dark:bg-[#0F1117] flex items-center justify-center">
+          <div className="w-8 h-8 rounded-full border-2 border-slate-300 dark:border-slate-700 border-t-slate-900 dark:border-t-white animate-spin" />
+        </div>
+      }
+    >
+      <LoginForm />
+    </React.Suspense>
   );
 }

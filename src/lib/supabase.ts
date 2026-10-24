@@ -1,5 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
-import { Client, Invoice, UserProfile } from "@/types";
+import { Client, Invoice } from "@/types";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://yazatdtzpebxhlgmwsic.supabase.co";
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlhemF0ZHR6cGVieGhsZ213c2ljIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI3OTA0ODgsImV4cCI6MjEwODM2NjQ4OH0.9Da1bLo-pmo0ZfjcTqJGTmNL7g13cHQruztqWC2NSSU";

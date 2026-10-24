@@ -39,6 +39,54 @@ const MONTH_NAMES_FR = [
 
 const WEEKDAY_NAMES_FR = ["Di", "Lu", "Ma", "Me", "Je", "Ve", "Sa"];
 
+const pad = (n: number) => String(n).padStart(2, "0");
+const toYMD = (year: number, month: number, day: number) =>
+  `${year}-${pad(month + 1)}-${pad(day)}`;
+
+function getCalendarDays(year: number, month: number) {
+  const firstDayIndex = new Date(year, month, 1).getDay(); // 0 is Sunday
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const daysInPrevMonth = new Date(year, month, 0).getDate();
+
+  const days: { day: number; isCurrentMonth: boolean; dateStr: string }[] = [];
+
+  // Previous month padding
+  for (let i = firstDayIndex - 1; i >= 0; i--) {
+    const d = daysInPrevMonth - i;
+    const prevM = month === 0 ? 11 : month - 1;
+    const prevY = month === 0 ? year - 1 : year;
+    days.push({
+      day: d,
+      isCurrentMonth: false,
+      dateStr: toYMD(prevY, prevM, d),
+    });
+  }
+
+  // Current month days
+  for (let d = 1; d <= daysInMonth; d++) {
+    days.push({
+      day: d,
+      isCurrentMonth: true,
+      dateStr: toYMD(year, month, d),
+    });
+  }
+
+  // Next month padding to fill grid (up to 35 or 42 cells)
+  const totalCells = days.length > 35 ? 42 : 35;
+  const remaining = totalCells - days.length;
+  for (let d = 1; d <= remaining; d++) {
+    const nextM = month === 11 ? 0 : month + 1;
+    const nextY = month === 11 ? year + 1 : year;
+    days.push({
+      day: d,
+      isCurrentMonth: false,
+      dateStr: toYMD(nextY, nextM, d),
+    });
+  }
+
+  return days;
+}
+
 export function DateRangePicker({ value, onChange }: DateRangePickerProps) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -117,54 +165,6 @@ export function DateRangePicker({ value, onChange }: DateRangePickerProps) {
   };
 
   // Helper to format date into YYYY-MM-DD
-  const pad = (n: number) => String(n).padStart(2, "0");
-  const toYMD = (year: number, month: number, day: number) =>
-    `${year}-${pad(month + 1)}-${pad(day)}`;
-
-  // Generate 42 cells (6 rows * 7 days) for a given month
-  const getCalendarDays = (year: number, month: number) => {
-    const firstDayIndex = new Date(year, month, 1).getDay(); // 0 is Sunday
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-    const daysInPrevMonth = new Date(year, month, 0).getDate();
-
-    const days: { day: number; isCurrentMonth: boolean; dateStr: string }[] = [];
-
-    // Previous month padding
-    for (let i = firstDayIndex - 1; i >= 0; i--) {
-      const d = daysInPrevMonth - i;
-      const prevM = month === 0 ? 11 : month - 1;
-      const prevY = month === 0 ? year - 1 : year;
-      days.push({
-        day: d,
-        isCurrentMonth: false,
-        dateStr: toYMD(prevY, prevM, d),
-      });
-    }
-
-    // Current month days
-    for (let d = 1; d <= daysInMonth; d++) {
-      days.push({
-        day: d,
-        isCurrentMonth: true,
-        dateStr: toYMD(year, month, d),
-      });
-    }
-
-    // Next month padding to fill grid (up to 35 or 42 cells)
-    const totalCells = days.length > 35 ? 42 : 35;
-    const remaining = totalCells - days.length;
-    for (let d = 1; d <= remaining; d++) {
-      const nextM = month === 11 ? 0 : month + 1;
-      const nextY = month === 11 ? year + 1 : year;
-      days.push({
-        day: d,
-        isCurrentMonth: false,
-        dateStr: toYMD(nextY, nextM, d),
-      });
-    }
-
-    return days;
-  };
 
   const leftMonthDays = useMemo(() => getCalendarDays(viewYear, viewMonth), [viewYear, viewMonth]);
   const rightMonthDays = useMemo(() => getCalendarDays(rightYear, rightMonth), [rightYear, rightMonth]);

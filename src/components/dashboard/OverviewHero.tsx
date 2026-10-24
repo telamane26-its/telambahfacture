@@ -1,12 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import {
   Plus,
   Download,
-  Calendar,
-  ChevronDown,
   Building2,
 } from "lucide-react";
 import { useData } from "@/lib/data-context";
@@ -14,14 +12,14 @@ import { DateRangePicker } from "./DateRangePicker";
 import { DateRange } from "@/lib/date-filter";
 
 interface OverviewHeroProps {
-  onNewInvoice: () => void;
+  onNewInvoice?: () => void;
   onExportCsv: () => void;
   dateRange: DateRange;
   onDateRangeChange: (range: DateRange) => void;
 }
 
 export function OverviewHero({
-  onNewInvoice,
+  onNewInvoice: _onNewInvoice,
   onExportCsv,
   dateRange,
   onDateRangeChange,

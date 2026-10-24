@@ -7,8 +7,6 @@ import {
   Plus,
   Search,
   Download,
-  Filter,
-  FileText,
   Copy,
   Check,
   ChevronLeft,
@@ -16,14 +14,13 @@ import {
   MessageSquare,
   FileQuestion,
   Eye,
-  ArrowUpRight,
 } from "lucide-react";
 import { Sidebar } from "@/components/layout/Sidebar";
 import { MobileHeader } from "@/components/layout/MobileHeader";
 import { MobileBottomNav } from "@/components/layout/MobileBottomNav";
 import { useData } from "@/lib/data-context";
 import { formatFCFA, formatDate } from "@/lib/utils";
-import { Invoice, InvoiceStatus } from "@/types";
+import { InvoiceStatus } from "@/types";
 import { generateInvoicePDF } from "@/lib/pdf-generator";
 import { AuthGuard } from "@/components/auth/AuthGuard";
 import { InvoicesSkeleton } from "@/components/invoices/InvoicesSkeleton";

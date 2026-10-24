@@ -39,7 +39,7 @@ export function NewInvoiceModal({ isOpen, onClose, onInvoiceCreated }: NewInvoic
   );
   const [customClientName, setCustomClientName] = useState("");
   const [customClientContact, setCustomClientContact] = useState("");
-  const [customClientCity, setCustomClientCity] = useState("Lomé");
+  const customClientCity = "Lomé";
 
   const [issueDate, setIssueDate] = useState<string>(todayStr);
   const [dueDate, setDueDate] = useState<string>(due30Str);
